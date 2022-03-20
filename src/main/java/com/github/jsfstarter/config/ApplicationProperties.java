@@ -9,7 +9,7 @@ import org.aeonbits.owner.Config.LoadType;
 import org.aeonbits.owner.Config.Sources;
 
 @LoadPolicy(LoadType.FIRST)
-@Sources({"file:src/main/resources/application.properties"})
+@Sources({"classpath:application.properties"})
 public interface ApplicationProperties extends Config {
     @Key("db.jdbcurl")
 	String jdbcUrl();

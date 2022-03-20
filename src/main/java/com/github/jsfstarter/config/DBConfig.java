@@ -47,7 +47,7 @@ public class DBConfig {
     }
 
     private void startDatabaseMigration() {
-        try(Liquibase liquibase = new Liquibase("database-migration/master-changelog.xml", new ClassLoaderResourceAccessor(), new JdbcConnection(jdbi.open().getConnection()))) {
+        try(Liquibase liquibase = new Liquibase("/database-migration/master-changelog.xml", new ClassLoaderResourceAccessor(), new JdbcConnection(jdbi.open().getConnection()))) {
             liquibase.update("");
         }
         catch(Exception e) {
