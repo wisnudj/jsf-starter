@@ -1,32 +1,77 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 <html
   xmlns="http://www.w3.org/1999/xhtml"
   xmlns:h="http://java.sun.com/jsf/html"
   xmlns:f="http://java.sun.com/jsf/core"
   xmlns:p="http://primefaces.org/ui"
 >
-  <h:head> </h:head>
+  <h:head>
+  	<title>JSF Starter</title>
+  	<h:outputStylesheet library="css" name="starter.css" />
+  	<style>
+		.sidebar {
+			position: fixed;
+			width: 300px;
+			height: 100%;
+			left: 0;
+			box-shadow: 2px 0 7px -5px;
+		}
+		
+		.sidebar .text {
+			color: black;
+			font-size: 25px;
+			font-weight: 600;
+			/*line-height: 65px;
+			text-align: center; */
+			letter-spacing: 1px;
+			padding: 50px 0 50px 50px;
+			font-weight: 600;
+		}
+		
+		nav ul {
+			height: 100%;
+			width: 100%;
+			list-style: none;
+		}
+		
+		nav ul li {
+			line-height: 72px;
+		}
+		
+		nav ul li a {
+			color: black;
+			text-decoration: none;
+			font-size: 18px;
+			padding-left: 45px;
+			font-weight: 500;
+			display: block;
+			width: 100%;
+			font-weight: 400;
+		}
+		
+		.menu-active {
+			background-color: #c8d9fa;
+		}
+		
+		.menu-active a {
+			color: #436099;
+		}
+		
+  	</style>
+  </h:head>
 
   <h:body>
-    <h:form>
-      <div class="card">
-        <p:dataTable var="student" value="#{helloBean.students}">
-          <p:column headerText="id">
-            <h:outputText value="#{student.id}" />
-          </p:column>
-
-          <p:column headerText="First name">
-            <h:outputText value="#{student.firstName}" />
-          </p:column>
-
-          <p:column headerText="Last name">
-            <h:outputText value="#{student.lastName}" />
-          </p:column>
-
-          <p:column headerText="Email">
-            <h:outputText value="#{student.email}" />
-          </p:column>
-        </p:dataTable>
-      </div>
-    </h:form>
+  	<nav class="sidebar">
+  		<div class="text">JSF-Starter</div>  		
+  		<ul>
+  			<li class="menu-active"><a href="#">Daftar Guru</a></li>
+  			<li><a href="#">Daftar Siswa</a></li>
+  			<li><a href="#">Daftar Pelajaran</a></li>
+  		</ul>
+  	</nav>
   </h:body>
 </html>
+
