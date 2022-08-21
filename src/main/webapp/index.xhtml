@@ -2,19 +2,26 @@
 <html lang="en"
     xmlns="http://www.w3.org/1999/xhtml"
     xmlns:f="http://xmlns.jcp.org/jsf/core"
-    xmlns:h="http://xmlns.jcp.org/jsf/html">
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:p="http://primefaces.org/ui">
     <h:head>
+    	<h:outputStylesheet library="webjars" name="primeflex/3.2.0/primeflex.min.css" />
+        <h:outputStylesheet library="webjars" name="primeflex/3.2.0/themes/saga-blue.css" />
+    	<h:outputStylesheet name="css/global.css" />
         <title>Hello World</title>
     </h:head>
     <h:body>
-        <h1>Hello World</h1>
-        <h:form>
-            <h:outputLabel for="input" value="Input" />
-            <h:inputText id="input" value="#{helloWorld.input}" />
-            <h:commandButton value="Submit" action="#{helloWorld.submit}">
-                <f:ajax execute="@form" render=":output" />
-            </h:commandButton>
-        </h:form>
-        <h:outputText id="output" value="#{helloWorld.output}" />
+		<div class="surface-section px-4 py-8 md:px-6 lg:px-8">
+		    <div class="text-700 text-center">
+		        <div class="text-teal-400 font-bold mb-3">POWERED BY JSF, PRIMEFACES AND OMNIFACES</div>
+		        <div class="text-900 font-bold text-5xl mb-3">Hello, #{indexBean.user.currentUsername}</div>
+		        <p:commandButton action="#{logoutBean.submit}" type="submit" value="Logout" styleClass="rounded-button font-bold px-5 py-2 p-button-raised bg-teal-400 hover:bg-teal-700" />
+		    </div>
+		</div>
+	    <div class="">
+
+	
+	    	
+	    </div>
     </h:body>
 </html>
